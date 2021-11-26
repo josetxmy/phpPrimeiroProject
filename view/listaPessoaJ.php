@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <?php
 $pfs = $_REQUEST['listaPessoaJ'];
-$pfsJD = $_REQUEST['pessoasPJBD'];
+$pfsJd = $_REQUEST['pessoasPJBD'];
 $pfsJ = new cPessoaJ();
 ?>
 <html>
@@ -29,10 +29,10 @@ $pfsJ = new cPessoaJ();
             <?php endforeach; ?>-->
             <!-- Nova tabela a partir do BD -->
             <?php
-            if ($pfsJD == null) {
+            if ($pfsJd == null) {
                 echo "Tabela vazia!";
             } else {
-                foreach ($pfsJD as $pj):
+                foreach ($pfsJd as $pj):
                     ?>
                     <tr>
                         <td><?php echo $pj["nomeFantasia"]; ?> </td>
@@ -40,12 +40,12 @@ $pfsJ = new cPessoaJ();
                         <td><?php echo $pj["cnpj"]; ?> </td>
                         <td>
                             <form action="editarPessoaJ.php" method="POST">
-                                <input type="hidden" name="id" value="<?php echo $pf["idPessoa"]; ?>"/>
-                                <input type="submit" name="update" value="Editar"/>
+                                <input type="hidden" name="id" value="<?php echo $pj["idPessoa"]; ?>"/>
+                                <input type="submit" name="updateJ" value="Editar"/>
                             </form>
                             <form action="<?php $pfsJ->deletarJD(); ?>" method="POST">
-                                <input type="hidden" name="id" value="<?php echo $pf["idPessoa"]; ?>"/>
-                                <input type="submit" name="DeletarJ" value="DeletarJ"/>
+                                <input type="hidden" name="id" value="<?php echo $pj["idPessoa"]; ?>"/>
+                                <input type="submit" name="DeletarJ" value="Deletar"/>
 
                             </form>
                         </td>

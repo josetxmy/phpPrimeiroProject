@@ -19,7 +19,7 @@ and open the template in the editor.
         <h1>Ger: Pessoa Fisica</h1>
         <a href="../indexx.php">voltar</a> 
         <br><br>
-        <form action="<?php $gerPJ->SalvarBD();?>" method="POST">
+        <form action="<?php $gerPF->SalvarBD(); ?>" method="POST">
        <input placeholder="Nome aqui ..." required type="nome" name="nome" id="nome"/>
        <br><br>
        <input placeholder="Telefone aqui ..." required type="tel" name="telefone" id="telefone"/>
@@ -33,7 +33,7 @@ and open the template in the editor.
         <input type="radio" required type="M" name="sexo" id="sexo"/>Masculino
         <input type="radio"  required type="F" name="sexo" id="sexo"/>Feminino
         <br><br><!-- comment -->
-         <input type="submit" value="salvar" name="salvar"/>
+         <input type="submit" value="salvar" name="salvarBD"/>
             <input type="reset" value="Limpar" name="limpar"/> 
         </form>
         <br><br>

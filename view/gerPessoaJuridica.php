@@ -27,10 +27,10 @@ $gerPJ = new cPessoaJ();
             <br><br>   
             <input placeholder=" Endereço aqui ..." required type="text" name="endereco" id="endereco"/>
             <br><br>   
-            <input placeholder="NomeFantasia aqui ..." required type="text" name="nomefantasia" id="nomefantasia"/>
+            <input placeholder="NomeFantasia aqui ..." required type="text" name="nomeFantasia" id="nomeFantasia"/>
             <br><br>
             <input placeholder="Cnpj aqui ..." type="text" required name="cnpj" id="cnpj"/>
-            <br><br>
+             <br><br><!-- comment -->
             <input type="submit" value="salvar" name="salvar"/>
             <input type="reset" value="Limpar" name="limpar"/> 
         </form>

@@ -7,11 +7,12 @@ and open the template in the editor.
 <?php
 require_once '../controller/cPessoaJ.php';
 $idPessoa = 0;
-if (isset($_POST['update'])) {
+if (isset($_POST['updateJ'])) {
     $idPessoa = $_POST['id'];
 }
 $cadPJs = new cPessoaJ();
-$pessoaF = $cadPJs->getPessoaJById($idPessoa);
+$pessoaJ = $cadPJs->getPessoaJById($idPessoa);
+
 ?>
 <html>
     <head>
@@ -21,25 +22,22 @@ $pessoaF = $cadPJs->getPessoaJById($idPessoa);
     <body>
         <h1>Editar Pessoa Juridica</h1>
         <br><br>
-        <form action="<?php $cadPJs->updateJ ?>" method="POST">
-            <input value="<?php echo $pessoaF[0]['idPessoa']; ?>" type="text" required name="idPesoa"/>
+        <form action="<?php $cadPJs->updateJ(); ?>" method="POST">
+            <input value="<?php echo $pessoaJ[0]['idPessoa']; ?>" type="hidden" required name="idPessoa"/>
             <br><br>
-            <input value="<?php echo $pessoaF[0]['nome']; ?>" type="text" required name="nome"/>
+            <input value="<?php echo $pessoaJ[0]['nome']; ?>" type="text" required name="nome"/>
             <br><br>
-            <input value="<?php echo $pessoaF[0]['telefone']; ?>" required type="number" name="telelfone"/>
+            <input value="<?php echo $pessoaJ[0]['telefone']; ?>" required type="number" name="telefone"/>
             <br><br>
-            <input value="<?php echo $pessoaF[0]['email']; ?>" required type="text" name="email"/>
+            <input value="<?php echo $pessoaJ[0]['email']; ?>" required type="text" name="email"/>
             <br><br>
-            <input value="<?php echo $pessoaF[0]['nomeFantasia']; ?>" required type="text" name="email"/>
+            <input value="<?php echo $pessoaJ[0]['nomeFantasia']; ?>" required type="text" name="nomeFantasia"/>
             <br><br>
-            <input value="<?php echo $pessoaF[0]['endereco']; ?>" required type="text" name="endereco"/>
+            <input value="<?php echo $pessoaJ[0]['endereco']; ?>" required type="text" name="endereco"/>
             <br><br>
-            <input value="<?php echo $pessoaF[0]['cnpj']; ?>" required type="number" name="cnpj"/>
+            <input value="<?php echo $pessoaJ[0]['cnpj']; ?>" required type="number" name="cnpj"/>
             <br><br>
-            <input type="radio"<?php if($pessoaF[0]['sexo']=="M"){echo "checked";} ?> value="M" name="sexo"/>Feminino
-            <input type="radio" <?php if($pessoaF[0]['sexo']=="F"){echo "checked";} ?> value="F" name="sexo"/>Masculino
-            <br><br>
-            <input type="submit" value="Salvar" required name="updatePJ" />
+            <input type="submit" value="Salvar" required name="updateP" />
             <input type="submit" value="Cancelar" required name="cancelarUJ" />
         </form>
         <?php
